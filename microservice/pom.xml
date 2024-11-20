@@ -15,16 +15,22 @@
     <packaging>pom</packaging>
 
     <properties>
-        <springBootVersion>3.3.5</springBootVersion>
         <commonVersion>1.0.0</commonVersion>
+        <jsonVersion>1.0.0</jsonVersion>
+        <springBootVersion>3.3.5</springBootVersion>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>toby.exchangerate</groupId>
-                <artifactId>json</artifactId>
+                <artifactId>common</artifactId>
                 <version>${commonVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>toby.exchangerate</groupId>
+                <artifactId>json</artifactId>
+                <version>${jsonVersion}</version>
             </dependency>
 
             <dependency>
