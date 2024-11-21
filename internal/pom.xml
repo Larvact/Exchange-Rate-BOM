@@ -8,6 +8,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <springVersion>6.1.14</springVersion>
         <jacksonVersion>2.18.1</jacksonVersion>
         <lombokVersion>1.18.36</lombokVersion>
         <junitVersion>5.11.3</junitVersion>
@@ -16,6 +17,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${springVersion}</version>
+            </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
