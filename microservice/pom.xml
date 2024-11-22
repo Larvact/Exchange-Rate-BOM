@@ -15,8 +15,10 @@
     <packaging>pom</packaging>
 
     <properties>
+        <javaVersion>21</javaVersion>
         <commonVersion>1.0.0</commonVersion>
         <jsonVersion>1.0.0</jsonVersion>
+        <lombokVersion>1.18.36</lombokVersion>
         <springBootVersion>3.3.5</springBootVersion>
     </properties>
 
@@ -59,6 +61,21 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>${javaVersion}</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombokVersion}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>

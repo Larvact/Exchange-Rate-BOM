@@ -8,6 +8,8 @@
     <packaging>pom</packaging>
 
     <properties>
+        <javaVersion>21</javaVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springVersion>6.1.14</springVersion>
         <jacksonVersion>2.18.1</jacksonVersion>
         <lombokVersion>1.18.36</lombokVersion>
@@ -63,5 +65,25 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>${javaVersion}</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombokVersion}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
