@@ -20,6 +20,7 @@
         <jsonVersion>1.0.0</jsonVersion>
         <lombokVersion>1.18.36</lombokVersion>
         <springBootVersion>3.3.5</springBootVersion>
+        <springWireMockVersion>4.1.4</springWireMockVersion>
     </properties>
 
     <dependencyManagement>
@@ -40,11 +41,22 @@
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${springBootVersion}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-webflux</artifactId>
+                <version>${springBootVersion}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${springBootVersion}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-contract-wiremock</artifactId>
+                <version>${springWireMockVersion}</version>
                 <scope>test</scope>
             </dependency>
 
